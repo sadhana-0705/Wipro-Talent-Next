@@ -1,38 +1,41 @@
 public class Video {
-    // Member variables
-    private String videoName;
-    private boolean checkout;
-    private int rating;
+    private String title;
+    private boolean checkedOut;
+    private double averageRating;
+    private int ratingCount;
+    private double totalRating;
 
-    // Constructor
-    public Video(String name) {
-        this.videoName = name;
-        this.checkout = false; // By default, video is available
-        this.rating = 0;       // Initial rating is 0
+    public Video(String title) {
+        this.title = title;
+        this.checkedOut = false;
+        this.averageRating = 0.0;
+        this.ratingCount = 0;
+        this.totalRating = 0.0;
     }
 
-    // Member functions
-    public String getName() {
-        return videoName;
+    public String getTitle() {
+        return title;
     }
 
-    public void doCheckout() {
-        this.checkout = true;
+    public boolean isCheckedOut() {
+        return checkedOut;
+    }
+
+    public double getRating() {
+        return averageRating;
+    }
+
+    public void doCheckedOut() {
+        this.checkedOut = true;
     }
 
     public void doReturn() {
-        this.checkout = false;
+        this.checkedOut = false;
     }
 
     public void receiveRating(int rating) {
-        this.rating = rating;
-    }
-
-    public int getRating() {
-        return rating;
-    }
-
-    public boolean getCheckout() {
-        return checkout;
+        this.totalRating += rating;
+        this.ratingCount++;
+        this.averageRating = this.totalRating / this.ratingCount;
     }
 }
