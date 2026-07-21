@@ -1,13 +1,13 @@
 package com.wipro.automobile.ship; // Matches the required training platform package structure
 
-public class compartment {
+public class Compartment {
     // 3 attributes representing the physical ship cabin dimensions
     private double height;
     private double width;
     private double breadth;
 
     // Parameterized Constructor matching variables
-    public compartment(double height, double width, double breadth) {
+    public Compartment(double height, double width, double breadth) {
         this.height = height;
         this.width = width;
         this.breadth = breadth;
